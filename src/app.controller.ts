@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/test')
+  testDbConnection() {
+    this.appService.testDynamoConnection();
+  }
+
+  @Get('/init')
+  init() {
+    return this.appService.initializeControlTable();
+  }
 }
